@@ -1,68 +1,50 @@
 body {
-  font-family: "Courier New", monospace;
+  margin: 0;
+  font-family: 'Courier New', monospace;
   background-color: black;
   color: #00ff00;
-  margin: 0;
   display: flex;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Sidebar on the left - fixed width */
+/* Sidebar */
 .sidebar {
   width: 280px;
   padding: 1rem;
   border-right: 2px dotted #00ff00;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  box-sizing: border-box;
   height: 100vh;
   position: sticky;
   top: 0;
-  background: black;
-  z-index: 100;
-}
-
-/* Each sidebar “window” */
-.sidebar-window {
-  border: 2px dotted #00ff00;
-  padding: 1rem;
   background-color: black;
-  box-sizing: border-box;
-  box-shadow: 0 0 8px #00ff00aa;
-}
-
-/* Main content next to sidebar */
-.main-content {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
   overflow-y: auto;
 }
 
-/* Header in separate window */
-.header-window {
-  border: 2px dotted #00ff00;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: black;
-  box-shadow: 0 0 8px #00ff00aa;
-}
-
-/* Container for main stuff */
-.container {
-  max-width: 700px;
-}
-
-/* The choose-identity section in window */
-.window {
+.sidebar-window {
   border: 2px dotted #00ff00;
   padding: 1rem;
   margin-bottom: 1.5rem;
   background-color: black;
-  box-shadow: 0 0 8px #00ff00aa;
+  box-shadow: 0 0 10px #00ff00aa;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.header-window {
+  border: 2px dotted #00ff00;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #00ff00aa;
+}
+
+.window {
+  border: 2px dotted #00ff00;
+  padding: 1rem;
+  background-color: black;
+  box-shadow: 0 0 10px #00ff00aa;
 }
 
 /* Buttons */
@@ -70,46 +52,40 @@ button {
   color: #00ff00;
   background-color: black;
   border: 1px solid #00ff00;
-  font-family: inherit;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1rem;
   margin: 0.25rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #003300;
 }
 
-/* Panels container */
+/* Panels */
 .panels {
-  position: relative;
+  margin-top: 1rem;
 }
 
-/* Panels style */
 .panel {
-  position: relative;
   border: 2px solid #00ff00;
   padding: 1rem;
+  background-color: black;
   margin-top: 1rem;
-  background: black;
   box-shadow: 0 0 10px #00ff00aa;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
 }
 
-/* Slide-in animation */
+.hidden {
+  display: none;
+}
+
 .slide-in {
-  animation: slideInUp 0.3s forwards;
+  animation: slideInUp 0.4s ease-out;
 }
 
-/* Slide in from below */
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -125,15 +101,4 @@ a {
 
 a:hover {
   text-decoration: none;
-}
-
-/* Lists */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-
-ul li {
-  margin-bottom: 0.5rem;
 }

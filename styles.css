@@ -1,33 +1,56 @@
-/* Your SpaceHey base styling adapted */
-
 body {
   font-family: "Courier New", monospace;
   background-color: black;
   color: #00ff00;
   margin: 0;
-  padding: 1rem 2rem;
+  display: flex;
+  min-height: 100vh;
 }
 
+/* Sidebar on the left */
+.sidebar {
+  width: 260px;
+  padding: 1rem;
+  border-right: 2px dotted #00ff00;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Each sidebar “window” */
+.sidebar-window {
+  border: 2px dotted #00ff00;
+  padding: 1rem;
+}
+
+/* Main content next to sidebar */
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header in separate window */
+.header-window {
+  border: 2px dotted #00ff00;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Container for main stuff */
 .container {
-  margin: 0 auto;
   max-width: 700px;
 }
 
-h1, h2, h3 {
-  color: #00ff00;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+/* The choose-identity section in window */
+.window {
+  border: 2px dotted #00ff00;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-a {
-  color: #00ff00;
-  text-decoration: underline;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
+/* Buttons */
 button {
   color: #00ff00;
   background-color: black;
@@ -43,25 +66,53 @@ button:hover {
   background-color: #003300;
 }
 
-.inner {
-  border: 2px dotted #00ff00;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+/* Panels container */
+.panels {
+  position: relative;
 }
 
-.options {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.panels .panel {
+/* Panels style */
+.panel {
+  position: relative;
   border: 2px solid #00ff00;
   padding: 1rem;
   margin-top: 1rem;
+  background: black;
+  box-shadow: 0 0 10px #00ff00aa;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
 }
 
+/* Slide-in animation */
+.slide-in {
+  animation: slideInUp 0.3s forwards;
+}
+
+/* Slide in from below */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Links */
+a {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Lists */
 ul {
   list-style: none;
   padding-left: 0;

@@ -34,12 +34,12 @@
         <div class="window-title">HOW DO YOU KNOW ME?</div>
         <div class="window-content">
           <div class="tab-buttons">
-            <button class="tab-button active" onclick="openTab('artist')">ARTIST</button>
-            <button class="tab-button" onclick="openTab('researcher')">RESEARCHER</button>
-            <button class="tab-button" onclick="openTab('person')">PERSON</button>
+            <button class="tab-button active" onclick="openTab('artist', this)">ARTIST</button>
+            <button class="tab-button" onclick="openTab('researcher', this)">RESEARCHER</button>
+            <button class="tab-button" onclick="openTab('person', this)">PERSON</button>
           </div>
 
-          <!-- ARTIST TAB -->
+          <!-- ARTIST TAB (initially shown) -->
           <div id="artist" class="tab-content" style="display: block;">
             <div class="sub-window">
               <div class="sub-title">ARTIST LINKS</div>
@@ -50,8 +50,8 @@
             </div>
           </div>
 
-          <!-- RESEARCHER TAB -->
-          <div id="researcher" class="tab-content">
+          <!-- RESEARCHER TAB (initially hidden) -->
+          <div id="researcher" class="tab-content" style="display: none;">
             <div class="sub-window">
               <div class="sub-title">ACADEMIC WORK</div>
               <div class="sub-content">
@@ -61,8 +61,8 @@
             </div>
           </div>
 
-          <!-- PERSON TAB -->
-          <div id="person" class="tab-content">
+          <!-- PERSON TAB (initially hidden) -->
+          <div id="person" class="tab-content" style="display: none;">
             <div class="sub-window">
               <div class="sub-title">PERSONAL</div>
               <div class="sub-content">
@@ -77,18 +77,18 @@
   </div>
 
   <script>
-    function openTab(tabId) {
+    function openTab(tabId, clickedButton) {
       // Hide all tabs
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.style.display = 'none';
       });
-      // Remove active class from buttons
+      // Remove active class from all buttons
       document.querySelectorAll('.tab-button').forEach(btn => {
         btn.classList.remove('active');
       });
-      // Show selected tab + mark button as active
+      // Show selected tab and mark button as active
       document.getElementById(tabId).style.display = 'block';
-      event.target.classList.add('active');
+      clickedButton.classList.add('active');
     }
   </script>
 </body>

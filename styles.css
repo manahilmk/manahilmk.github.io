@@ -182,3 +182,108 @@ a:hover {
 #vinyl-gallery .vinyl:hover + .vinyl-title {
   visibility: visible;
 }
+/* CASSETTE PLAYER */
+.cassette {
+  width: 100%;
+  height: 80px;
+  background: #111;
+  border: 2px dashed #00ff00;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.cassette-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff00;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.cassette-spool {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #00ff00;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cassette-spool.left {
+  left: 15px;
+}
+
+.cassette-spool.right {
+  right: 15px;
+}
+
+.cassette-controls {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.cassette-btn {
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.now-playing {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  text-align: center;
+}
+/* ICON GRID */
+.icon-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.icon {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  opacity: 0.7;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  filter: sepia(100%) hue-rotate(45deg) saturate(3);
+}
+
+.icon span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+/* PANELS */
+.panel {
+  display: none;
+  border: 1px dashed #00ff00;
+  padding: 10px;
+  margin-top: 10px;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

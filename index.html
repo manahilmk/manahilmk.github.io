@@ -1,110 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About Me - Retro Terminal Style</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My GitHub Page</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="sidebar">
-  <section class="sidebar-window">
-    <h2>About Me</h2>
-    <p>
-      I’m an artist, researcher, and hooman navigating this pixelated world.
-    </p>
-  </section>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-window">
+      <h3>About Me</h3>
+      <p>Digital gremlin. Likes the green terminal glow. Femme-coded chaos.</p>
+    </div>
+    <div class="sidebar-window">
+      <h3>Likes</h3>
+      <ul>
+        <li>Cats</li>
+        <li>Horror games</li>
+        <li>Neurotech</li>
+        <li>Disco Elysium</li>
+      </ul>
+    </div>
+    <div class="sidebar-window">
+      <h3>Dislikes</h3>
+      <ul>
+        <li>Bright lights before 10am</li>
+        <li>Valak reveal (Conjuring 2… why?)</li>
+        <li>Soggy fries</li>
+      </ul>
+    </div>
+  </div>
 
-  <section class="sidebar-window">
-    <h2>Likes</h2>
-    <ul>
-      <li>Anime & Manga</li>
-      <li>EEG & Signal Processing</li>
-      <li>Horror Movies</li>
-      <li>Video Games (RDR2, Resident Evil, Disco Elysium)</li>
-    </ul>
-  </section>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header-window">
+      <h1>Hey, I'm [Your Name Here]</h1>
+    </div>
 
-  <section class="sidebar-window">
-    <h2>Dislikes</h2>
-    <ul>
-      <li>Sugar Overload</li>
-      <li>Lazy Monsters in Horror</li>
-      <li>Bad Code</li>
-    </ul>
-  </section>
-</div>
+    <div class="window">
+      <h2>Who am I to you?</h2>
+      <button onclick="showPanel('artist')">Artist</button>
+      <button onclick="showPanel('researcher')">Researcher / Student</button>
+      <button onclick="showPanel('hooman')">Just a Hooman</button>
 
-<div class="main-content">
+      <div class="panels">
+        <div id="artist" class="panel hidden">
+          <h3>As an Artist</h3>
+          <p>Here's where I post my chaotic beauty:</p>
+          <ul>
+            <li><a href="https://www.instagram.com/yourhandle" target="_blank">Instagram</a></li>
+            <li><a href="https://www.behance.net/yourhandle" target="_blank">Behance</a></li>
+          </ul>
+        </div>
 
-  <header class="header-window">
-    <h1>[Your Name]</h1>
-  </header>
+        <div id="researcher" class="panel hidden">
+          <h3>As a Researcher / Student</h3>
+          <p>Currently working on EEG, signal processing, and possibly summoning ghosts through MATLAB.</p>
+          <p><a href="https://github.com/yourhandle" target="_blank">My GitHub</a></p>
+        </div>
 
-  <main class="container">
-
-    <section class="choose-identity window">
-      <h2>Who do you know me as?</h2>
-      <div class="options">
-        <button data-target="artist" id="artist-btn">Artist</button>
-        <button data-target="researcher" id="researcher-btn">Researcher / Student</button>
-        <button data-target="hooman" id="hooman-btn">Hooman</button>
+        <div id="hooman" class="panel hidden">
+          <h3>As a Fellow Hooman</h3>
+          <p>Let's talk about feelings. Or food. Or weird dreams.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <section class="panels">
-      <div id="artist" class="panel" hidden>
-        <h3>Artist Mode</h3>
-        <ul>
-          <li><a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer">Behance</a></li>
-          <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-      </div>
+  <script>
+    function showPanel(panelId) {
+      const panels = document.querySelectorAll('.panel');
+      panels.forEach(p => p.classList.add('hidden'));
 
-      <div id="researcher" class="panel" hidden>
-        <h3>Researcher / Student</h3>
-        <ul>
-          <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-          <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        </ul>
-      </div>
-
-      <div id="hooman" class="panel" hidden>
-        <h3>Just a Hooman</h3>
-        <p>Probably binge-watching, loving cats, and vibing through life.</p>
-      </div>
-    </section>
-  </main>
-</div>
-
-<script>
-  const buttons = document.querySelectorAll('.options button');
-  const panels = document.querySelectorAll('.panel');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-target');
-
-      panels.forEach(panel => {
-        if(panel.id === target){
-          // toggle panel with slide
-          if(panel.hidden){
-            panel.hidden = false;
-            panel.classList.add('slide-in');
-          } else {
-            panel.classList.remove('slide-in');
-            setTimeout(() => panel.hidden = true, 300); // wait for animation
-          }
-        } else {
-          panel.classList.remove('slide-in');
-          panel.hidden = true;
-        }
-      });
-    });
-  });
-</script>
-
+      const panel = document.getElementById(panelId);
+      panel.classList.remove('hidden');
+      panel.classList.add('slide-in');
+    }
+  </script>
 </body>
 </html>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Spacehey-GitHub Hybrid</title>
+  <title>Clean Windowed Panels with Sidebar</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
+    <aside class="sidebar">
       <div class="sidebar-box">
         <h2>About Me</h2>
         <section>
           <p>Name: Your Name</p>
-          <p>Occupation: Artist / Researcher / Ho(o)man</p>
+          <p>Occupation: Artist / Researcher / Hooman</p>
         </section>
       </div>
 
@@ -30,38 +30,40 @@
           <p>Bright UIs, sluggish code, no coffee</p>
         </section>
       </div>
-    </div>
+    </aside>
 
     <main>
-      <h1>Who do you know me as?</h1>
-      <div class="buttons">
-        <button id="artistBtn">Artist</button>
-        <button id="researcherBtn">Researcher / Student</button>
-        <button id="hoomanBtn">Hooman</button>
-      </div>
+      <section class="windowed-section">
+        <h1>Who do you know me as?</h1>
+        <div class="buttons">
+          <button id="artistBtn">Artist</button>
+          <button id="researcherBtn">Researcher / Student</button>
+          <button id="hoomanBtn">Hooman</button>
+        </div>
+      </section>
 
-      <div id="artistPanel" class="panel">
+      <section id="artistPanel" class="windowed-section panel">
         <h2>Artist Socials</h2>
         <ul>
           <li><a href="https://www.behance.net/yourprofile" target="_blank">Behance</a></li>
           <li><a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a></li>
           <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li>
         </ul>
-      </div>
+      </section>
 
-      <div id="researcherPanel" class="panel">
+      <section id="researcherPanel" class="windowed-section panel">
         <h2>Researcher / Student Links</h2>
         <ul>
           <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank">Google Scholar</a></li>
           <li><a href="https://github.com/yourprofile" target="_blank">GitHub</a></li>
           <li><a href="https://www.researchgate.net/profile/Your_Name" target="_blank">ResearchGate</a></li>
         </ul>
-      </div>
+      </section>
 
-      <div id="hoomanPanel" class="panel">
+      <section id="hoomanPanel" class="windowed-section panel">
         <h2>Just a Hooman</h2>
         <p>Hey there! Feel free to explore, chat, and maybe say hi sometime :)</p>
-      </div>
+      </section>
     </main>
   </div>
 
@@ -95,7 +97,7 @@
       hoomanPanel.style.display = 'block';
     });
 
-    // Start with all panels hidden
+    // Hide all on load
     hideAllPanels();
   </script>
 </body>

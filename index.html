@@ -27,54 +27,66 @@
         </div>
       </div>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
-      <div class="window">
-        <div class="window-title">HOW DO YOU KNOW ME?</div>
-        <div class="window-content">
-          <div class="tab-buttons">
-            <button class="tab-button active" onclick="openTab('artist', this)">ARTIST</button>
-            <button class="tab-button" onclick="openTab('researcher', this)">RESEARCHER</button>
-            <button class="tab-button" onclick="openTab('person', this)">PERSON</button>
-          </div>
-
-          <!-- ARTIST TAB (initially shown) -->
-          <div id="artist" class="tab-content" style="display: block;">
-            <div class="sub-window">
-              <div class="sub-title">ARTIST LINKS</div>
-              <div class="sub-content">
-                <p>↳ <a href="#">Portfolio</a></p>
-                <p>↳ <a href="#">Instagram</a></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- RESEARCHER TAB (initially hidden) -->
-          <div id="researcher" class="tab-content" style="display: none;">
-            <div class="sub-window">
-              <div class="sub-title">ACADEMIC WORK</div>
-              <div class="sub-content">
-                <p>↳ <a href="#">Papers</a></p>
-                <p>↳ <a href="#">GitHub</a></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- PERSON TAB (initially hidden) -->
-          <div id="person" class="tab-content" style="display: none;">
-            <div class="sub-window">
-              <div class="sub-title">PERSONAL</div>
-              <div class="sub-content">
-                <p>↳ <a href="#">Blog</a></p>
-                <p>↳ <a href="#">Twitter</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="window">
+  <div class="window-title">NOW PLAYING</div>
+  <div class="window-content">
+    <div class="cassette">
+      <div class="cassette-label">YOUR SONG</div>
+      <div class="cassette-spool left"></div>
+      <div class="cassette-spool right"></div>
+      <div class="cassette-controls">
+        <button class="cassette-btn">▶</button>
+        <button class="cassette-btn">■</button>
       </div>
     </div>
+    <p class="now-playing">Artist - Track Title (3:27)</p>
   </div>
+</div>
+    <!-- MAIN CONTENT -->
+    <div class="window">
+  <div class="window-title">HOW YOU KNOW ME</div>
+  <div class="window-content">
+    <div class="icon-grid">
+      <!-- Artist Icon -->
+      <div class="icon" onclick="showPanel('artist')" 
+           onmouseover="hoverIcon(this)" onmouseout="unhoverIcon(this)">
+        <img src="artist-icon.png" alt="Artist">
+        <span>Artist</span>
+      </div>
+      
+      <!-- Researcher Icon -->
+      <div class="icon" onclick="showPanel('researcher')"
+           onmouseover="hoverIcon(this)" onmouseout="unhoverIcon(this)">
+        <img src="researcher-icon.png" alt="Researcher">
+        <span>Researcher</span>
+      </div>
+      
+      <!-- Person Icon -->
+      <div class="icon" onclick="showPanel('person')"
+           onmouseover="hoverIcon(this)" onmouseout="unhoverIcon(this)">
+        <img src="person-icon.png" alt="Person">
+        <span>Person</span>
+      </div>
+    </div>
+
+    <!-- Panels (initially hidden) -->
+    <div id="artist-panel" class="panel">
+      <h3>Artist Links</h3>
+      <p>↳ <a href="#">Portfolio</a></p>
+    </div>
+    
+    <div id="researcher-panel" class="panel">
+      <h3>Academic Work</h3>
+      <p>↳ <a href="#">Papers</a></p>
+    </div>
+    
+    <div id="person-panel" class="panel">
+      <h3>Personal</h3>
+      <p>↳ <a href="#">Blog</a></p>
+    </div>
+  </div>
+</div>
+    
 <!-- VINYL GALLERY SECTION -->
 <div class="window">
   <div class="window-title">MY MUSIC COLLECTION</div>

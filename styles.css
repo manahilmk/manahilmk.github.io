@@ -1,10 +1,14 @@
+/* (c) Layout created by p0libius (https://layouts.spacehey.com/layout?id=1430) */
+
 body {
   font-family: Courier New, monospace;
   background-color: black;
 }
+
 img {
   filter: sepia(100%) hue-rotate(45deg) saturate(5);
 }
+
 body::before {
   content: " ";
   display: block;
@@ -18,39 +22,39 @@ body::before {
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
 }
+
 .logo {
   filter: sepia(100%) hue-rotate(45deg) saturate(10);
 }
-#q,
-button {
+
+#q, button {
   color: #00ff00;
   background-color: black;
   border: 1px solid #00ff00;
   font-family: inherit;
 }
-p,
-i,
-b,
-.count {
+
+p, i, b, .count {
   color: #00ff00 !important;
 }
-a,
-.profile .friends .person p,
-.logout-btn {
+
+a, .profile .friends .person p, .logout-btn {
   color: #00ff00 !important;
   text-decoration: underline !important;
 }
+
 .container {
   margin: 0 auto 0;
-  padding: 2rem;
 }
+
 .icon {
   display: none;
 }
-nav,
-nav .links a {
+
+nav, nav .links a {
   color: #00ff00;
 }
+
 nav .top {
   margin-top: 2px;
   background: none;
@@ -58,114 +62,103 @@ nav .top {
   border: 2px dotted #00ff00;
   border-bottom: none;
 }
+
 nav .links {
   background-color: black;
   border: 2px solid #00ff00;
 }
+
 main {
   background: black;
   color: #00ff00;
   border-left: 2px dotted #00ff00;
   border-right: 2px dotted #00ff00;
 }
-.heading,
-.url-info {
+
+.heading, .url-info {
   color: #00ff00 !important;
   background: none;
   background-color: black !important;
   border: 2px solid #00ff00 !important;
 }
+
 .inner {
   color: #00ff00 !important;
   border: 2px dotted #00ff00;
   border-top: none;
 }
+
 .profile-info {
   border: 2px solid #00ff00;
 }
+
 .profile-info .inner {
   border: none;
 }
+
 .friends .inner {
   border-bottom: none;
 }
+
 #comments {
   border-bottom: 2px dotted #00ff00;
 }
-.profile .contact,
-.profile .table-section,
-.home-actions {
+
+.profile .contact, .profile .table-section, .home-actions {
   border: none !important;
 }
+
 .profile .contact .f-row:first-of-type {
   margin-top: 0px;
   padding-top: 7px;
 }
+
 .profile .blurbs .section h4 {
   color: #00ff00 !important;
 }
+
 .details-table {
   margin: 2px;
 }
-.details-table,
-td {
+
+.details-table, td {
   border: 1px solid #00ff00;
   border-collapse: collapse;
 }
+
 td {
   color: #00ff00 !important;
   background: none;
   background-color: black !important;
-}
+} 
+
 table.details-table {
   max-width: 98%;
 }
+
 .profile h1 {
   font-size: 2em;
 }
+
 footer {
   background: black;
   border: 2px dotted #00ff00;
 }
+
 footer p {
   color: #00ff00 !important;
 }
+
 .comments-table {
   border: none;
   border-collapse: collapse;
 }
+
 .comment-replies {
   border: 1px solid #00ff00;
   margin: 2px;
 }
+
 nav .info {
   background: none;
-}
-
-/* Vinyl Player Section */
-.vinyl-section {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.vinyl-img {
-  width: 250px;
-  animation: spin 6s linear infinite;
-  margin-bottom: 1rem;
-}
-
-audio {
-  width: 80%;
-  border: 2px solid #00ff00;
-  background-color: black;
-  color: #00ff00;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

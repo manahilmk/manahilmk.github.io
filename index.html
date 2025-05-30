@@ -1,104 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clean Windowed Panels with Sidebar</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | GitHub Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
-      <div class="sidebar-box">
-        <h2>About Me</h2>
-        <section>
-          <p>Name: Your Name</p>
-          <p>Occupation: Artist / Researcher / Hooman</p>
-        </section>
-      </div>
-
-      <div class="sidebar-box">
-        <h2>Likes</h2>
-        <section>
-          <p>EEG magic, cats, horror movies, synthwave</p>
-        </section>
-      </div>
-
-      <div class="sidebar-box">
-        <h2>Dislikes</h2>
-        <section>
-          <p>Bright UIs, sluggish code, no coffee</p>
-        </section>
-      </div>
-    </aside>
-
-    <main>
-      <section class="windowed-section">
-        <h1>Who do you know me as?</h1>
-        <div class="buttons">
-          <button id="artistBtn">Artist</button>
-          <button id="researcherBtn">Researcher / Student</button>
-          <button id="hoomanBtn">Hooman</button>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="window">
+        <div class="window-title">PROFILE</div>
+        <div class="window-content">
+          <img src="your-profile-photo.jpg" alt="Your Name" class="profile-photo">
+          <h2>YOUR NAME</h2>
+          <p>« Short bio or tagline »</p>
         </div>
-      </section>
+      </div>
 
-      <section id="artistPanel" class="windowed-section panel">
-        <h2>Artist Socials</h2>
-        <ul>
-          <li><a href="https://www.behance.net/yourprofile" target="_blank">Behance</a></li>
-          <li><a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a></li>
-          <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li>
-        </ul>
-      </section>
+      <div class="window">
+        <div class="window-title">ABOUT ME</div>
+        <div class="window-content">
+          <p><strong>LIKES:</strong> Music, art, coding...</p>
+          <p><strong>DISLIKES:</strong> Rainy days, slow WiFi...</p>
+        </div>
+      </div>
+    </div>
 
-      <section id="researcherPanel" class="windowed-section panel">
-        <h2>Researcher / Student Links</h2>
-        <ul>
-          <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank">Google Scholar</a></li>
-          <li><a href="https://github.com/yourprofile" target="_blank">GitHub</a></li>
-          <li><a href="https://www.researchgate.net/profile/Your_Name" target="_blank">ResearchGate</a></li>
-        </ul>
-      </section>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="window">
+        <div class="window-title">HOW DO YOU KNOW ME?</div>
+        <div class="window-content">
+          <div class="tab-buttons">
+            <button class="tab-button" onclick="openTab('artist')">AS AN ARTIST</button>
+            <button class="tab-button" onclick="openTab('researcher')">AS A RESEARCHER</button>
+            <button class="tab-button" onclick="openTab('person')">AS A PERSON</button>
+          </div>
 
-      <section id="hoomanPanel" class="windowed-section panel">
-        <h2>Just a Hooman</h2>
-        <p>Hey there! Feel free to explore, chat, and maybe say hi sometime :)</p>
-      </section>
-    </main>
+          <div id="artist" class="tab-content">
+            <h3>ARTIST LINKS</h3>
+            <p>↳ <a href="#">My Art Portfolio</a></p>
+            <p>↳ <a href="#">Instagram</a></p>
+          </div>
+
+          <div id="researcher" class="tab-content">
+            <h3>ACADEMIC WORK</h3>
+            <p>↳ <a href="#">Research Papers</a></p>
+            <p>↳ <a href="#">GitHub</a></p>
+          </div>
+
+          <div id="person" class="tab-content">
+            <h3>PERSONAL STUFF</h3>
+            <p>↳ <a href="#">Blog</a></p>
+            <p>↳ <a href="#">Twitter</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    const artistBtn = document.getElementById('artistBtn');
-    const researcherBtn = document.getElementById('researcherBtn');
-    const hoomanBtn = document.getElementById('hoomanBtn');
-
-    const artistPanel = document.getElementById('artistPanel');
-    const researcherPanel = document.getElementById('researcherPanel');
-    const hoomanPanel = document.getElementById('hoomanPanel');
-
-    function hideAllPanels() {
-      artistPanel.style.display = 'none';
-      researcherPanel.style.display = 'none';
-      hoomanPanel.style.display = 'none';
+    function openTab(tabId) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.style.display = 'none';
+      });
+      // Show selected tab
+      document.getElementById(tabId).style.display = 'block';
     }
-
-    artistBtn.addEventListener('click', () => {
-      hideAllPanels();
-      artistPanel.style.display = 'block';
+    // Default: show first tab
+    document.addEventListener('DOMContentLoaded', () => {
+      openTab('artist');
     });
-
-    researcherBtn.addEventListener('click', () => {
-      hideAllPanels();
-      researcherPanel.style.display = 'block';
-    });
-
-    hoomanBtn.addEventListener('click', () => {
-      hideAllPanels();
-      hoomanPanel.style.display = 'block';
-    });
-
-    // Hide all on load
-    hideAllPanels();
   </script>
 </body>
 </html>

@@ -123,5 +123,25 @@
       clickedButton.classList.add('active');
     }
   </script>
+<script>
+// Show panel and hide others
+function showPanel(panelId) {
+  document.querySelectorAll('.panel').forEach(panel => {
+    panel.style.display = 'none';
+  });
+  document.getElementById(`${panelId}-panel`).style.display = 'block';
+}
+
+// Hover effects
+function hoverIcon(icon) {
+  icon.style.opacity = '1';
+}
+
+function unhoverIcon(icon) {
+  if (!icon.querySelector('img').src.includes(activePanel)) {
+    icon.style.opacity = '0.7';
+  }
+}
+</script>    
 </body>
 </html>

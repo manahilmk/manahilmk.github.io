@@ -1,4 +1,4 @@
-/* SPACEHEY-INSPIRED RETRO TERMINAL STYLE */
+/* SPACEHEY RETRO STYLE */
 body {
   font-family: 'Courier New', monospace;
   background-color: black;
@@ -8,7 +8,7 @@ body {
   line-height: 1.5;
 }
 
-/* CRT SCANLINES EFFECT */
+/* CRT SCANLINES */
 body::before {
   content: " ";
   display: block;
@@ -23,23 +23,25 @@ body::before {
   pointer-events: none;
 }
 
-/* LAYOUT */
+/* LAYOUT FIXES */
 .container {
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 20px; /* Ensures space between sidebar and main content */
 }
 
 .sidebar {
   width: 250px;
-  margin-right: 20px;
+  flex-shrink: 0; /* Prevents squeezing */
 }
 
 .main-content {
-  flex: 1;
+  flex-grow: 1;
+  min-width: 0; /* Fixes overflow */
 }
 
-/* WINDOW STYLES */
+/* WINDOWS */
 .window {
   background: black;
   border: 2px solid #00ff00;
@@ -59,11 +61,22 @@ body::before {
   padding: 15px;
 }
 
-/* PROFILE PHOTO (SpaceHey-style filter) */
-.profile-photo {
-  width: 100%;
-  border: 2px dotted #00ff00;
-  filter: sepia(100%) hue-rotate(45deg) saturate(5);
+/* SUB-WINDOWS (Nested boxes) */
+.sub-window {
+  border: 1px dashed #00ff00;
+  margin-top: 15px;
+}
+
+.sub-title {
+  background: black;
+  color: #00ff00;
+  padding: 5px 10px;
+  border-bottom: 1px dashed #00ff00;
+  font-size: 0.9em;
+}
+
+.sub-content {
+  padding: 10px;
 }
 
 /* TAB BUTTONS */
@@ -83,19 +96,15 @@ body::before {
   text-transform: uppercase;
 }
 
-.tab-button:hover {
+.tab-button:hover, .tab-button.active {
   background: #003300;
 }
 
-/* TAB CONTENT */
-.tab-content {
-  display: none;
-  border-top: 1px dotted #00ff00;
-  padding-top: 10px;
-}
-
-.tab-content h3 {
-  margin-top: 0;
+/* PROFILE PHOTO */
+.profile-photo {
+  width: 100%;
+  border: 2px dotted #00ff00;
+  filter: sepia(100%) hue-rotate(45deg) saturate(5);
 }
 
 /* LINKS */
@@ -108,13 +117,12 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* RESPONSIVE */
+/* MOBILE FIX */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
   .sidebar {
     width: 100%;
-    margin-right: 0;
   }
 }

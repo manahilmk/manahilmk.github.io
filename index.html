@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | GitHub Page</title>
+  <title>Your GitHub Page</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,17 +13,17 @@
       <div class="window">
         <div class="window-title">PROFILE</div>
         <div class="window-content">
-          <img src="your-profile-photo.jpg" alt="Your Name" class="profile-photo">
+          <img src="your-photo.jpg" alt="You" class="profile-photo">
           <h2>YOUR NAME</h2>
-          <p>« Short bio or tagline »</p>
+          <p>« Short bio here »</p>
         </div>
       </div>
 
       <div class="window">
         <div class="window-title">ABOUT ME</div>
         <div class="window-content">
-          <p><strong>LIKES:</strong> Music, art, coding...</p>
-          <p><strong>DISLIKES:</strong> Rainy days, slow WiFi...</p>
+          <p><strong>LIKES:</strong> Music, coding...</p>
+          <p><strong>DISLIKES:</strong> Slow internet...</p>
         </div>
       </div>
     </div>
@@ -34,27 +34,42 @@
         <div class="window-title">HOW DO YOU KNOW ME?</div>
         <div class="window-content">
           <div class="tab-buttons">
-            <button class="tab-button" onclick="openTab('artist')">AS AN ARTIST</button>
-            <button class="tab-button" onclick="openTab('researcher')">AS A RESEARCHER</button>
-            <button class="tab-button" onclick="openTab('person')">AS A PERSON</button>
+            <button class="tab-button active" onclick="openTab('artist')">ARTIST</button>
+            <button class="tab-button" onclick="openTab('researcher')">RESEARCHER</button>
+            <button class="tab-button" onclick="openTab('person')">PERSON</button>
           </div>
 
-          <div id="artist" class="tab-content">
-            <h3>ARTIST LINKS</h3>
-            <p>↳ <a href="#">My Art Portfolio</a></p>
-            <p>↳ <a href="#">Instagram</a></p>
+          <!-- ARTIST TAB -->
+          <div id="artist" class="tab-content" style="display: block;">
+            <div class="sub-window">
+              <div class="sub-title">ARTIST LINKS</div>
+              <div class="sub-content">
+                <p>↳ <a href="#">Portfolio</a></p>
+                <p>↳ <a href="#">Instagram</a></p>
+              </div>
+            </div>
           </div>
 
+          <!-- RESEARCHER TAB -->
           <div id="researcher" class="tab-content">
-            <h3>ACADEMIC WORK</h3>
-            <p>↳ <a href="#">Research Papers</a></p>
-            <p>↳ <a href="#">GitHub</a></p>
+            <div class="sub-window">
+              <div class="sub-title">ACADEMIC WORK</div>
+              <div class="sub-content">
+                <p>↳ <a href="#">Papers</a></p>
+                <p>↳ <a href="#">GitHub</a></p>
+              </div>
+            </div>
           </div>
 
+          <!-- PERSON TAB -->
           <div id="person" class="tab-content">
-            <h3>PERSONAL STUFF</h3>
-            <p>↳ <a href="#">Blog</a></p>
-            <p>↳ <a href="#">Twitter</a></p>
+            <div class="sub-window">
+              <div class="sub-title">PERSONAL</div>
+              <div class="sub-content">
+                <p>↳ <a href="#">Blog</a></p>
+                <p>↳ <a href="#">Twitter</a></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -67,13 +82,14 @@
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.style.display = 'none';
       });
-      // Show selected tab
+      // Remove active class from buttons
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // Show selected tab + mark button as active
       document.getElementById(tabId).style.display = 'block';
+      event.target.classList.add('active');
     }
-    // Default: show first tab
-    document.addEventListener('DOMContentLoaded', () => {
-      openTab('artist');
-    });
   </script>
 </body>
 </html>

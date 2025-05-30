@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Landing Page</title>
+  <title>Your Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,46 +11,54 @@
     <div class="window">
       <div class="title-bar">About Me</div>
       <div class="content">
-        <p>EEG explorer, horror lover, digital artist.</p>
+        <p>Neuro-babe, horror junkie, signal tamer by day—artist by moonlight.</p>
       </div>
     </div>
     <div class="window">
       <div class="title-bar">Likes</div>
       <div class="content">
-        <ul><li>Neurotech</li><li>RDR2</li><li>Cats</li></ul>
+        <ul>
+          <li>BCIs & EEGs</li>
+          <li>Resident Evil marathons</li>
+          <li>Emotional damage in art form</li>
+        </ul>
       </div>
     </div>
     <div class="window">
       <div class="title-bar">Dislikes</div>
       <div class="content">
-        <ul><li>Bad horror endings</li><li>Noisy EEGs</li></ul>
+        <ul>
+          <li>Weak tea</li>
+          <li>Noisy signals</li>
+          <li>Disrespect to LPPs</li>
+        </ul>
       </div>
     </div>
   </div>
 
   <div class="main">
     <div class="window">
-      <div class="title-bar">Who am I to you?</div>
+      <div class="title-bar">Who Am I to You?</div>
       <div class="content">
         <button onclick="showPanel('artist')">Artist</button>
-        <button onclick="showPanel('researcher')">Researcher</button>
+        <button onclick="showPanel('researcher')">Researcher / Student</button>
         <button onclick="showPanel('hooman')">Hooman</button>
 
         <div id="artist" class="panel hidden">
-          <h3>As an Artist</h3>
-          <p>I make neural-themed art and spooky stuff.</p>
-          <a href="https://instagram.com/">Instagram</a><br />
-          <a href="https://behance.net/">Behance</a>
+          <h3>🎨 The Artist</h3>
+          <p>Crafting neural dreams and spooky visual stories.</p>
+          <a href="https://instagram.com/" target="_blank">Instagram</a><br>
+          <a href="https://behance.net/" target="_blank">Behance</a>
         </div>
 
         <div id="researcher" class="panel hidden">
-          <h3>As a Researcher</h3>
-          <p>BCI, EEG, MATLAB girlie. Let’s talk signals.</p>
+          <h3>🧠 The Researcher</h3>
+          <p>Doing a PhD in EEG sorcery and decoding brainwaves like it's bedtime poetry.</p>
         </div>
 
         <div id="hooman" class="panel hidden">
-          <h3>Just a Hooman</h3>
-          <p>I eat cereal at 2AM and rewatch Scream for fun.</p>
+          <h3>🐾 Just Hooman Things</h3>
+          <p>Probably rewatching *Hannibal* with a bowl of cereal at 2am. You get it.</p>
         </div>
       </div>
     </div>

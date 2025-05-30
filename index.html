@@ -8,52 +8,76 @@
 </head>
 <body>
 
-<header>
-  <h1>[Your Name]</h1>
-</header>
-
-<main class="container">
-  <section class="about-me inner">
+<div class="sidebar">
+  <section class="sidebar-window">
     <h2>About Me</h2>
     <p>
-      I’m an artist, researcher, and just a hooman exploring the matrix of life.<br />
-      Welcome to my retro corner of the internet.
+      I’m an artist, researcher, and hooman navigating this pixelated world.
     </p>
   </section>
 
-  <section class="choose-identity inner">
-    <h2>Who do you know me as?</h2>
-    <div class="options">
-      <button data-target="artist" id="artist-btn">Artist</button>
-      <button data-target="researcher" id="researcher-btn">Researcher / Student</button>
-      <button data-target="hooman" id="hooman-btn">Hooman</button>
-    </div>
+  <section class="sidebar-window">
+    <h2>Likes</h2>
+    <ul>
+      <li>Anime & Manga</li>
+      <li>EEG & Signal Processing</li>
+      <li>Horror Movies</li>
+      <li>Video Games (RDR2, Resident Evil, Disco Elysium)</li>
+    </ul>
   </section>
 
-  <section class="panels inner">
-    <div id="artist" class="panel" hidden>
-      <h3>Artist Mode</h3>
-      <ul>
-        <li><a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer">Behance</a></li>
-        <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      </ul>
-    </div>
-
-    <div id="researcher" class="panel" hidden>
-      <h3>Researcher / Student</h3>
-      <ul>
-        <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-        <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      </ul>
-    </div>
-
-    <div id="hooman" class="panel" hidden>
-      <h3>Just a Hooman</h3>
-      <p>Probably binge-watching, loving cats, and vibing through life.</p>
-    </div>
+  <section class="sidebar-window">
+    <h2>Dislikes</h2>
+    <ul>
+      <li>Sugar Overload</li>
+      <li>Lazy Monsters in Horror</li>
+      <li>Bad Code</li>
+    </ul>
   </section>
-</main>
+</div>
+
+<div class="main-content">
+
+  <header class="header-window">
+    <h1>[Your Name]</h1>
+  </header>
+
+  <main class="container">
+
+    <section class="choose-identity window">
+      <h2>Who do you know me as?</h2>
+      <div class="options">
+        <button data-target="artist" id="artist-btn">Artist</button>
+        <button data-target="researcher" id="researcher-btn">Researcher / Student</button>
+        <button data-target="hooman" id="hooman-btn">Hooman</button>
+      </div>
+    </section>
+
+    <section class="panels">
+      <div id="artist" class="panel" hidden>
+        <h3>Artist Mode</h3>
+        <ul>
+          <li><a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer">Behance</a></li>
+          <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div id="researcher" class="panel" hidden>
+        <h3>Researcher / Student</h3>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div id="hooman" class="panel" hidden>
+        <h3>Just a Hooman</h3>
+        <p>Probably binge-watching, loving cats, and vibing through life.</p>
+      </div>
+    </section>
+  </main>
+</div>
 
 <script>
   const buttons = document.querySelectorAll('.options button');
@@ -65,8 +89,16 @@
 
       panels.forEach(panel => {
         if(panel.id === target){
-          panel.hidden = !panel.hidden;
+          // toggle panel with slide
+          if(panel.hidden){
+            panel.hidden = false;
+            panel.classList.add('slide-in');
+          } else {
+            panel.classList.remove('slide-in');
+            setTimeout(() => panel.hidden = true, 300); // wait for animation
+          }
         } else {
+          panel.classList.remove('slide-in');
           panel.hidden = true;
         }
       });

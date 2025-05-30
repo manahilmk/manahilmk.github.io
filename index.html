@@ -1,164 +1,78 @@
-/* (c) Layout created by p0libius (https://layouts.spacehey.com/layout?id=1430) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Me - Retro Terminal Style</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-body {
-  font-family: Courier New, monospace;
-  background-color: black;
-}
+<header>
+  <h1>[Your Name]</h1>
+</header>
 
-img {
-  filter: sepia(100%) hue-rotate(45deg) saturate(5);
-}
+<main class="container">
+  <section class="about-me inner">
+    <h2>About Me</h2>
+    <p>
+      I’m an artist, researcher, and just a hooman exploring the matrix of life.<br />
+      Welcome to my retro corner of the internet.
+    </p>
+  </section>
 
-body::before {
-  content: " ";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-  z-index: 2;
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: none;
-}
+  <section class="choose-identity inner">
+    <h2>Who do you know me as?</h2>
+    <div class="options">
+      <button data-target="artist" id="artist-btn">Artist</button>
+      <button data-target="researcher" id="researcher-btn">Researcher / Student</button>
+      <button data-target="hooman" id="hooman-btn">Hooman</button>
+    </div>
+  </section>
 
-.logo {
-  filter: sepia(100%) hue-rotate(45deg) saturate(10);
-}
+  <section class="panels inner">
+    <div id="artist" class="panel" hidden>
+      <h3>Artist Mode</h3>
+      <ul>
+        <li><a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer">Behance</a></li>
+        <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
 
-#q, button {
-  color: #00ff00;
-  background-color: black;
-  border: 1px solid #00ff00;
-  font-family: inherit;
-}
+    <div id="researcher" class="panel" hidden>
+      <h3>Researcher / Student</h3>
+      <ul>
+        <li><a href="https://scholar.google.com/citations?user=yourID" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
 
-p, i, b, .count {
-  color: #00ff00 !important;
-}
+    <div id="hooman" class="panel" hidden>
+      <h3>Just a Hooman</h3>
+      <p>Probably binge-watching, loving cats, and vibing through life.</p>
+    </div>
+  </section>
+</main>
 
-a, .profile .friends .person p, .logout-btn {
-  color: #00ff00 !important;
-  text-decoration: underline !important;
-}
+<script>
+  const buttons = document.querySelectorAll('.options button');
+  const panels = document.querySelectorAll('.panel');
 
-.container {
-  margin: 0 auto 0;
-}
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
 
-.icon {
-  display: none;
-}
+      panels.forEach(panel => {
+        if(panel.id === target){
+          panel.hidden = !panel.hidden;
+        } else {
+          panel.hidden = true;
+        }
+      });
+    });
+  });
+</script>
 
-nav, nav .links a {
-  color: #00ff00;
-}
-
-nav .top {
-  margin-top: 2px;
-  background: none;
-  background-color: black;
-  border: 2px dotted #00ff00;
-  border-bottom: none;
-}
-
-nav .links {
-  background-color: black;
-  border: 2px solid #00ff00;
-}
-
-main {
-  background: black;
-  color: #00ff00;
-  border-left: 2px dotted #00ff00;
-  border-right: 2px dotted #00ff00;
-}
-
-.heading, .url-info {
-  color: #00ff00 !important;
-  background: none;
-  background-color: black !important;
-  border: 2px solid #00ff00 !important;
-}
-
-.inner {
-  color: #00ff00 !important;
-  border: 2px dotted #00ff00;
-  border-top: none;
-}
-
-.profile-info {
-  border: 2px solid #00ff00;
-}
-
-.profile-info .inner {
-  border: none;
-}
-
-.friends .inner {
-  border-bottom: none;
-}
-
-#comments {
-  border-bottom: 2px dotted #00ff00;
-}
-
-.profile .contact, .profile .table-section, .home-actions {
-  border: none !important;
-}
-
-.profile .contact .f-row:first-of-type {
-  margin-top: 0px;
-  padding-top: 7px;
-}
-
-.profile .blurbs .section h4 {
-  color: #00ff00 !important;
-}
-
-.details-table {
-  margin: 2px;
-}
-
-.details-table, td {
-  border: 1px solid #00ff00;
-  border-collapse: collapse;
-}
-
-td {
-  color: #00ff00 !important;
-  background: none;
-  background-color: black !important;
-} 
-
-table.details-table {
-  max-width: 98%;
-}
-
-.profile h1 {
-  font-size: 2em;
-}
-
-footer {
-  background: black;
-  border: 2px dotted #00ff00;
-}
-
-footer p {
-  color: #00ff00 !important;
-}
-
-.comments-table {
-  border: none;
-  border-collapse: collapse;
-}
-
-.comment-replies {
-  border: 1px solid #00ff00;
-  margin: 2px;
-}
-
-nav .info {
-  background: none;
-}
+</body>
+</html>

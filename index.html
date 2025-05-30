@@ -3,72 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My Cool GitHub Page</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <div class="sidebar">
-    <div class="window">
-      <div class="title-bar">About Me</div>
-      <div class="content">
-        <p>Neuro-babe, horror junkie, signal tamer by day—artist by moonlight.</p>
-      </div>
-    </div>
-    <div class="window">
-      <div class="title-bar">Likes</div>
-      <div class="content">
-        <ul>
-          <li>BCIs & EEGs</li>
-          <li>Resident Evil marathons</li>
-          <li>Emotional damage in art form</li>
-        </ul>
-      </div>
-    </div>
-    <div class="window">
-      <div class="title-bar">Dislikes</div>
-      <div class="content">
-        <ul>
-          <li>Weak tea</li>
-          <li>Noisy signals</li>
-          <li>Disrespect to LPPs</li>
-        </ul>
-      </div>
-    </div>
+    <h2>About Me</h2>
+    <section>
+      <p>Name: [Your Name]</p>
+      <p>Occupation: Artist / Researcher / Goblin</p>
+    </section>
+
+    <h2>Likes</h2>
+    <section>
+      <p>EEG magic, cats, horror movies, synthwave</p>
+    </section>
+
+    <h2>Dislikes</h2>
+    <section>
+      <p>Bright UIs, sluggish code, no coffee</p>
+    </section>
   </div>
 
   <div class="main">
-    <div class="window">
-      <div class="title-bar">Who Am I to You?</div>
-      <div class="content">
-        <button onclick="showPanel('artist')">Artist</button>
-        <button onclick="showPanel('researcher')">Researcher / Student</button>
-        <button onclick="showPanel('hooman')">Hooman</button>
+    <h1>Hello there, traveler.</h1>
+    <p>Choose your access level:</p>
 
-        <div id="artist" class="panel hidden">
-          <h3>🎨 The Artist</h3>
-          <p>Crafting neural dreams and spooky visual stories.</p>
-          <a href="https://instagram.com/" target="_blank">Instagram</a><br>
-          <a href="https://behance.net/" target="_blank">Behance</a>
-        </div>
+    <div class="buttons">
+      <button onclick="showPanel('artist')">Artist</button>
+      <button onclick="showPanel('researcher')">Researcher/Student</button>
+      <button onclick="showPanel('hooman')">Hooman</button>
+    </div>
 
-        <div id="researcher" class="panel hidden">
-          <h3>🧠 The Researcher</h3>
-          <p>Doing a PhD in EEG sorcery and decoding brainwaves like it's bedtime poetry.</p>
-        </div>
+    <div id="artist" class="panel">
+      <h2>Artist Window</h2>
+      <ul>
+        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://behance.net" target="_blank">Behance</a></li>
+      </ul>
+    </div>
 
-        <div id="hooman" class="panel hidden">
-          <h3>🐾 Just Hooman Things</h3>
-          <p>Probably rewatching *Hannibal* with a bowl of cereal at 2am. You get it.</p>
-        </div>
-      </div>
+    <div id="researcher" class="panel">
+      <h2>Researcher Window</h2>
+      <p>Here I post about EEGs, ML, and neuroscience magic. Projects, publications, and nerd things go here.</p>
+    </div>
+
+    <div id="hooman" class="panel">
+      <h2>Hooman Window</h2>
+      <p>Hey! I’m just vibing. Ask me about cats, games, or coffee rituals.</p>
     </div>
   </div>
 
   <script>
     function showPanel(id) {
-      document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
+      const panels = document.querySelectorAll('.panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>

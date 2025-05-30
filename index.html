@@ -1,83 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My GitHub Page</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="window sidebar-window">
+    <div class="title-bar">About Me</div>
+    <div class="content">
+      <p>I’m a chaos-coded research girlie who likes ghosts and gamma waves.</p>
+    </div>
+  </div>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="sidebar-window">
-      <h3>About Me</h3>
-      <p>Digital gremlin. Likes the green terminal glow. Femme-coded chaos.</p>
-    </div>
-    <div class="sidebar-window">
-      <h3>Likes</h3>
+  <div class="window sidebar-window">
+    <div class="title-bar">Likes</div>
+    <div class="content">
       <ul>
-        <li>Cats</li>
-        <li>Horror games</li>
-        <li>Neurotech</li>
         <li>Disco Elysium</li>
-      </ul>
-    </div>
-    <div class="sidebar-window">
-      <h3>Dislikes</h3>
-      <ul>
-        <li>Bright lights before 10am</li>
-        <li>Valak reveal (Conjuring 2… why?)</li>
-        <li>Soggy fries</li>
+        <li>EEG data</li>
+        <li>Psych horror</li>
+        <li>Red Dead Redemption 2</li>
       </ul>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="header-window">
-      <h1>Hey, I'm [Your Name Here]</h1>
+  <div class="window sidebar-window">
+    <div class="title-bar">Dislikes</div>
+    <div class="content">
+      <ul>
+        <li>Jump scares without plot</li>
+        <li>Cold coffee</li>
+        <li>Unformatted EEG data 😡</li>
+      </ul>
     </div>
+  </div>
+</div>
 
-    <div class="window">
-      <h2>Who am I to you?</h2>
+<!-- Main Content -->
+<div class="main-content">
+  <div class="window header-window">
+    <div class="title-bar">Welcome</div>
+    <div class="content">
+      <h1>Hey, I’m [Your Name]</h1>
+    </div>
+  </div>
+
+  <div class="window">
+    <div class="title-bar">Who am I to you?</div>
+    <div class="content">
       <button onclick="showPanel('artist')">Artist</button>
-      <button onclick="showPanel('researcher')">Researcher / Student</button>
-      <button onclick="showPanel('hooman')">Just a Hooman</button>
+      <button onclick="showPanel('researcher')">Researcher</button>
+      <button onclick="showPanel('hooman')">Hooman</button>
 
       <div class="panels">
         <div id="artist" class="panel hidden">
           <h3>As an Artist</h3>
-          <p>Here's where I post my chaotic beauty:</p>
+          <p>Some links to my work:</p>
           <ul>
-            <li><a href="https://www.instagram.com/yourhandle" target="_blank">Instagram</a></li>
-            <li><a href="https://www.behance.net/yourhandle" target="_blank">Behance</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Behance</a></li>
           </ul>
         </div>
-
         <div id="researcher" class="panel hidden">
-          <h3>As a Researcher / Student</h3>
-          <p>Currently working on EEG, signal processing, and possibly summoning ghosts through MATLAB.</p>
-          <p><a href="https://github.com/yourhandle" target="_blank">My GitHub</a></p>
+          <h3>As a Researcher</h3>
+          <p>I decode brains and cry in MATLAB.</p>
         </div>
-
         <div id="hooman" class="panel hidden">
-          <h3>As a Fellow Hooman</h3>
-          <p>Let's talk about feelings. Or food. Or weird dreams.</p>
+          <h3>Just a Human</h3>
+          <p>We can talk about snacks and media recs, if you’d like.</p>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    function showPanel(panelId) {
-      const panels = document.querySelectorAll('.panel');
-      panels.forEach(p => p.classList.add('hidden'));
-
-      const panel = document.getElementById(panelId);
-      panel.classList.remove('hidden');
-      panel.classList.add('slide-in');
-    }
-  </script>
-</body>
-</html>
+</div>

@@ -1,70 +1,66 @@
-<!-- Sidebar -->
-<div class="sidebar">
-  <div class="window sidebar-window">
-    <div class="title-bar">About Me</div>
-    <div class="content">
-      <p>I’m a chaos-coded research girlie who likes ghosts and gamma waves.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="window">
+      <div class="title-bar">About Me</div>
+      <div class="content">
+        <p>EEG explorer, horror lover, digital artist.</p>
+      </div>
+    </div>
+    <div class="window">
+      <div class="title-bar">Likes</div>
+      <div class="content">
+        <ul><li>Neurotech</li><li>RDR2</li><li>Cats</li></ul>
+      </div>
+    </div>
+    <div class="window">
+      <div class="title-bar">Dislikes</div>
+      <div class="content">
+        <ul><li>Bad horror endings</li><li>Noisy EEGs</li></ul>
+      </div>
     </div>
   </div>
 
-  <div class="window sidebar-window">
-    <div class="title-bar">Likes</div>
-    <div class="content">
-      <ul>
-        <li>Disco Elysium</li>
-        <li>EEG data</li>
-        <li>Psych horror</li>
-        <li>Red Dead Redemption 2</li>
-      </ul>
-    </div>
-  </div>
+  <div class="main">
+    <div class="window">
+      <div class="title-bar">Who am I to you?</div>
+      <div class="content">
+        <button onclick="showPanel('artist')">Artist</button>
+        <button onclick="showPanel('researcher')">Researcher</button>
+        <button onclick="showPanel('hooman')">Hooman</button>
 
-  <div class="window sidebar-window">
-    <div class="title-bar">Dislikes</div>
-    <div class="content">
-      <ul>
-        <li>Jump scares without plot</li>
-        <li>Cold coffee</li>
-        <li>Unformatted EEG data 😡</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Main Content -->
-<div class="main-content">
-  <div class="window header-window">
-    <div class="title-bar">Welcome</div>
-    <div class="content">
-      <h1>Hey, I’m [Your Name]</h1>
-    </div>
-  </div>
-
-  <div class="window">
-    <div class="title-bar">Who am I to you?</div>
-    <div class="content">
-      <button onclick="showPanel('artist')">Artist</button>
-      <button onclick="showPanel('researcher')">Researcher</button>
-      <button onclick="showPanel('hooman')">Hooman</button>
-
-      <div class="panels">
         <div id="artist" class="panel hidden">
           <h3>As an Artist</h3>
-          <p>Some links to my work:</p>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Behance</a></li>
-          </ul>
+          <p>I make neural-themed art and spooky stuff.</p>
+          <a href="https://instagram.com/">Instagram</a><br />
+          <a href="https://behance.net/">Behance</a>
         </div>
+
         <div id="researcher" class="panel hidden">
           <h3>As a Researcher</h3>
-          <p>I decode brains and cry in MATLAB.</p>
+          <p>BCI, EEG, MATLAB girlie. Let’s talk signals.</p>
         </div>
+
         <div id="hooman" class="panel hidden">
-          <h3>Just a Human</h3>
-          <p>We can talk about snacks and media recs, if you’d like.</p>
+          <h3>Just a Hooman</h3>
+          <p>I eat cereal at 2AM and rewatch Scream for fun.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <script>
+    function showPanel(id) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
